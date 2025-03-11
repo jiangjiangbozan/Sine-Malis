@@ -4,7 +4,7 @@
   "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start:all": "npm run start:backend && npm run start:frontend",
     "start:backend": "cd backend && npm start",
     "start:frontend": "cd frontend && npm start"
@@ -12,5 +12,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "workspaces": ["backend", "frontend"]
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }

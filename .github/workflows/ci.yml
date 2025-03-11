@@ -1,0 +1,24 @@
+name: CI Pipeline
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - run: npm ci
+
+      - name: Unit Tests (Angular & NestJS)
+        run: npm test
+
+      - name: E2E Tests (Cypress)
+        run: npm run e2e
+
+      - name: Lint Check
+        run: npm run lint
